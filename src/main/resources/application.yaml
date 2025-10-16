@@ -1,20 +1,20 @@
 spring:
   application:
     name: partners-tech-interview
-  datasource:
-    url: ${tech-interview.postgres.url}
-    username: ${tech-interview.postgres.username}
-    password: ${tech-interview.postgres.password}
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    properties:
-      hibernate:
-        format_sql: true
-        show_sql: false
-        jdbc.lob.non_contextual_creation: true
+  data:
+    mongodb:
+      host: localhost
+      database: partners-tech-interview-db
+      username: partnersTechInterviewUser
+      password: partnersTechInterviewPassword
+      port: 27017
+      authentication-database: admin
   rabbitmq:
     host: ${tech-interview.rabbitmq.host}
     port: ${tech-interview.rabbitmq.port}
     username: ${tech-interview.rabbitmq.username}
     password: ${tech-interview.rabbitmq.password}
+
+clamav:
+  host: clamav
+  port: 3310
