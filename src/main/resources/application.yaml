@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: partners-tech-interview
+  datasource:
+    url: ${tech-interview.postgres.url}
+    username: ${tech-interview.postgres.username}
+    password: ${tech-interview.postgres.password}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  rabbitmq:
+    host: ${tech-interview.rabbitmq.host}
+    port: ${tech-interview.rabbitmq.port}
+    username: ${tech-interview.rabbitmq.username}
+    password: ${tech-interview.rabbitmq.password}
