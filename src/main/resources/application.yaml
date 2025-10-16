@@ -14,7 +14,19 @@ spring:
     port: ${tech-interview.rabbitmq.port}
     username: ${tech-interview.rabbitmq.username}
     password: ${tech-interview.rabbitmq.password}
+    queueName: partners-antivirus
+    exchangeName: partners-antivirus_exchange
+    routingKey: partners-antivirus
+    listener:
+      simple:
+        acknowledge-mode: auto
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 2000ms
+          multiplier: 2.0
 
 clamav:
-  host: clamav
+  host: localhost
   port: 3310
+  timeout: 25000
